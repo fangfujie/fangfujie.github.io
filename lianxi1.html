@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="tuichu()">点击关闭</button>
+		<script>
+			// 去重
+			// var arr = [1,1,3,4,2,4,7]
+			// var obj = {}
+			// for(var i = 0; i < arr.length; i++){
+			// 	if(typeof obj[arr[i]] !== "undefined"){
+			// 		arr.splice(i,1);
+			// 		i--;
+			// 	}else{
+			// 		obj[arr[i]] = arr[i];
+			// 	}
+			// }
+			// obj = null;
+			// console.log(arr);
+			
+			//转驼峰
+			 // var foo="get-element-by-id";
+			 // var arr = foo.split('-');
+			 // console.log(arr)
+			 // for(var i = 1; i < arr.length; i++){
+				//  arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].slice(1)
+			 // }
+			 // var msg = arr.join('');
+			 // console.log(msg)
+			 
+			  
+			 // 1) 实现对该数组的倒排，输出[5,1,4,2,6,3]
+			// var numberArray = [3,6,2,4,1,5];
+			// console.log(numberArray.reverse());
+			// 降序
+			// console.log(numberArray.sort((a,b)=>{return b - a;}));
+			
+			// 获取日期
+			// var data = new Date();
+			// var y = data.getFullYear();
+			// var m = data.getMonth();
+			// var d = data.getDate();
+			// console.log(y+"年"+(jia(m+1))+"月"+jia(d)+"日")
+			// function jia(num){
+			// 	return num < 10?"0"+num:num;
+			// }
+			
+			
+			// 抽取随机数放入数组并排序
+			// var arr = [];
+			// for(var i = 0; i < 10; i++){
+			// 	var num = suijishu(10,100);
+			// 	arr.push(num)
+			// }
+			// function suijishu(min,max){
+			// 	return Math.round(Math.random()*(max-min)+min)
+			// }
+			// console.log(arr.sort((a,b)=>{return a - b}))
+			
+			
+			var obj = {};
+			var url = "http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
+			var str = url.split('?')[1];
+			console.log(str)
+			var str1 = str.split('&');
+			console.log(str1)
+			for(var i = 0; i < str1.length; i++){
+				obj[str1[i].charAt(0)] = str1[i].slice(2)
+			}
+			console.log(obj)
+			
+			
+			
+			for(var i = 1; i <= 3; i++){
+				setTimeout((function(i){
+					console.log(i)
+				})(i),0)
+			}
+			
+			
+			// 斐波那列
+			function fun(n){
+				if(n == 1 || n == 2){
+					return 1
+				};
+				return fun(n-2) + fun(n-1);
+			};
+			console.log(fun(10));
+			
+			
+			// 点击退出函数
+			function tuichu(){
+				if(confirm("确认要退出吗？")){
+					window.close();
+				}
+			}
+			
+			var one;
+			var two=null;
+			console.log(one==two,one===two);
+			
+			
+		</script>
+	</body>
+</html>

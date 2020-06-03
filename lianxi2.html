@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img {
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="form1" onclick="changRad()">
+		<input type="radio" name="radioGroup" checked="" />
+		<input type="radio" name="radioGroup" checked="" />
+		<input type="radio" name="radioGroup" checked="" />
+		<input type="radio" name="radioGroup" checked="" />
+		<input type="submit"/>
+		</form>
+		
+		
+		<select name="img" onchange="gengaitup()">
+			<option value="1">城市生活</option>
+			<option value="2">都市早报</option>
+			<option value="3">青山绿水</option>
+		</select>
+		<img src="./img/小黄人1.jpg" alt="">
+	</body>
+	<script type="text/javascript">
+		var rad = document.getElementsByName("radioGroup");
+		// console.log(rad)
+		
+		
+		function changRad(){
+			console.log(rad)
+			for(let i = 0; i < rad.length; i++){
+				if(rad[i].checked){
+					alert("您选中的是第"+(i+1)+"个选项")
+				}
+			}
+		}
+		
+		
+		// 
+		var Img = document.getElementsByTagName('img')[0];
+		var oSel = document.getElementsByName('img')[0];
+		function gengaitup(){
+			// console.log(1)
+			var val = oSel.value;
+			console.log(val)
+			Img.src = "./img/小黄人"+val+".jpg";
+		}
+		
+		
+		
+		// 统计字符串中出现最多的字符的次数
+		var str = 'asdfssaaasasasasaa';
+		var obj = {};
+		for(var i = 0; i < str.length; i++){
+			if(!obj[str[i]]){
+				obj[str[i]] = 1;
+			}else{
+				obj[str[i]]++;
+			}
+		}
+		console.log(obj)
+		var Imax = 0;
+		var Index = "";
+		for(var i in obj){
+			if(obj[i] > Imax){
+				Imax = obj[i];
+				Index = i;
+			}
+		}
+		console.log("出现最多的是:"+Index+"出现的次数为"+Imax+"次")
+		
+	</script>
+</html>
